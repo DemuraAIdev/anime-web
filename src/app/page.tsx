@@ -1,3 +1,4 @@
+import Top5 from "./Top5";
 import SearchBar from "./searchbar";
 import TypedBios from "@/components/typed";
 
@@ -24,6 +25,10 @@ export default function Home() {
         </div>
 
         <SearchBar />
+        <h1 className=" text-4xl font-bold tracking-tight pt-10 text-gray-900 dark:text-gray-100">
+          Top 5 Anime
+        </h1>
+        <Top5 />
         {/* <svg
           id="visual"
           viewBox="0 0 900 450"

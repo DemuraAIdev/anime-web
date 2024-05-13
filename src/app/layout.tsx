@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     template: `%s | ${config.title}`,
   },
   description: config.description,
+  authors: config.author,
   alternates: {
     canonical: "./",
     types: {

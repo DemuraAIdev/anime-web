@@ -6,10 +6,10 @@ export const headerNavLinks = [
 ];
 
 export const OtherLinks = [
-  { href: "/tools", title: "Tools" },
-  { href: "/projects", title: "Projects" },
-  { href: "/activity/code", title: "Activity" },
-  { href: "/anime", title: "AnimeList" },
+  { href: "https://vahry.my.id/tools", title: "Tools" },
+  { href: "https://vahry.my.id/projects", title: "Projects" },
+  { href: "https://vahry.my.id/activity/code", title: "Activity" },
+  { href: "https://vahry.my.id/anime", title: "AnimeList" },
 ];
 
 export const ExternalLinks = [

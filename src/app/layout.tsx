@@ -23,6 +23,8 @@ export const metadata: Metadata = {
       "application/rss+xml": `${config.siteURL}/feed.xml`,
     },
   },
+  creator: config.author[0].name,
+
   robots: {
     index: true,
     follow: true,

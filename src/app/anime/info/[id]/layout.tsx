@@ -1,12 +1,6 @@
+import { Suspense } from "react";
 import { Metadata } from "next";
 import siteMetadata from "@/data/config";
-
-interface PageSEOProps {
-  title: string;
-  description?: string;
-  image?: string;
-  [key: string]: any;
-}
 
 type Props = {
   params: { id: string };
@@ -33,4 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [data.main_picture.large],
     },
   };
+}
+
+export default function Layouts({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+    </>
+  );
 }

@@ -4,14 +4,6 @@ import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 import CardMini from "./Card";
 import { Suspense } from "react";
-import { generateMetadata } from "../seo";
-
-export const metadata = generateMetadata({
-  title: "Anime Info",
-  description: "Anime Information",
-  url: "https://example.com",
-  image: "https://example.com/image.png",
-});
 
 export default function Page({ params }: { params: { id: string } }) {
   const { data, isValidating } = useSWR(

@@ -153,4 +153,4 @@ export const getTop5Anime = async () => {
   return data;
 };
 
-// get my rating anime
+// get

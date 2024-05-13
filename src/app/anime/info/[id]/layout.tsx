@@ -8,8 +8,13 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
-  const anime = await fetch(`/api/animelist/getinfo/${id}`);
-  const { data } = await anime.json();
+  const anime = await fetch(
+    `https://anime.vahry.my.id/api/animelist/getinfo/${id}`,
+    {
+      cache: "force-cache",
+    }
+  );
+  const data = await anime.json();
   return {
     title: data.title,
     openGraph: {

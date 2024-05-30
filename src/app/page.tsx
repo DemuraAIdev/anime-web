@@ -5,7 +5,7 @@ import TypedBios from "@/components/typed";
 export default function Home() {
   return (
     <main>
-      <div className="min-h-screen space-y-2 pb-8 pt-5 md:space-y-5 md:lg:mt-20 ">
+      <div className="h-screen space-y-2 pb-8 pt-5 md:space-y-5 md:lg:mt-20 ">
         <div
           className="animate-text bg-gradient-to-r 
             from-[#6EE7B7] via-[#3B82F6]  to-[#9333EA]
@@ -25,10 +25,7 @@ export default function Home() {
         </div>
 
         <SearchBar />
-        <h1 className=" text-4xl font-bold tracking-tight pt-10 text-gray-900 dark:text-gray-100">
-          Top 5 Anime
-        </h1>
-        <Top5 />
+
         {/* <svg
           id="visual"
           viewBox="0 0 900 450"

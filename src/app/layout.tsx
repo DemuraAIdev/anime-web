@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SectionContainer from "@/components/Container";
 import config from "@/data/config";
 import { GeistMono } from "geist/font/mono";
+import NextTopLoader from "nextjs-toploader";
 import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
@@ -69,6 +70,12 @@ export default async function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}
     >
       <body className={`bg-white antialiased dark:bg-dark`}>
+        <NextTopLoader
+          showSpinner={false}
+          zIndex={1600}
+          showAtBottom={true}
+          color="#14b8a6"
+        />
         <Providers>
           <SectionContainer>
             <div className="flex h-screen  flex-col justify-between font-mono  sm:ml-1">

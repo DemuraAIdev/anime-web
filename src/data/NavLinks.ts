@@ -1,9 +1,4 @@
-export const headerNavLinks = [
-  { href: "/", title: "AniSearch" },
-  { href: "https://vahry.my.id/blog", title: "Blog" },
-  { href: "https://vahry.my.id/projects", title: "Projects" },
-  { href: "https://vahry.my.id/about", title: "About" },
-];
+export const headerNavLinks = [{ href: "/", title: "AniSearch" }];
 
 export const OtherLinks = [
   { href: "https://vahry.my.id/tools", title: "Tools" },

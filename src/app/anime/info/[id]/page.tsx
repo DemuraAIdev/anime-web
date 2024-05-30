@@ -4,6 +4,8 @@ import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 import CardMini from "./Card";
 import { Suspense } from "react";
+import CustomLink from "@/components/Link";
+import { SiMyanimelist } from "react-icons/si";
 
 export default function Page({ params }: { params: { id: string } }) {
   const { data, isValidating } = useSWR(
@@ -32,9 +34,14 @@ export default function Page({ params }: { params: { id: string } }) {
       <div className="space-y-3">
         <h2 className=" text-3xl font-semibold">Synopsis </h2>
         <p className="mt-3 font-sans">{data?.synopsis || "Loading"}</p>
-        <h2 className=" text-3xl font-semibold">Background </h2>
-        <p className="mt-3 font-sans">{data?.background || "Loading"}</p>
+        {data?.background ? (
+          <>
+            <h2 className=" text-3xl font-semibold">Background </h2>
+            <p className="mt-3 font-sans">{data?.background || "Loading"}</p>
+          </>
+        ) : null}
       </div>
+      {/* button to official myanimelist */}
     </div>
   );
 }

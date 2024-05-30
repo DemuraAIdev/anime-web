@@ -1,9 +1,11 @@
 import Image from "@/components/Image";
+import CustomLink from "@/components/Link";
 import Link from "@/components/Link";
 import { useState } from "react";
 
 interface CardMiniProps {
   data: {
+    id: BigInteger;
     main_picture: {
       large: string;
     };
@@ -28,7 +30,7 @@ interface CardMiniProps {
 export default function CardMini({ data }: CardMiniProps) {
   return (
     // Use grid and grid-cols-2 for medium screens and above
-    <div className="mb-4 w-full border-2 border-dotted p-5 dark:border-gray-700 dark:bg-[#111010] md:grid md:grid-cols-2">
+    <div className="mb-4 w-full border-2 rounded-xl p-5 dark:border-gray-700 dark:bg-[#111010] md:grid md:grid-cols-2">
       <div>
         <Image
           alt={"Gambar"}
@@ -97,6 +99,13 @@ export default function CardMini({ data }: CardMiniProps) {
             ))}
           </div>
         </div>
+        <CustomLink
+          className=" inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 px-3 py-2 text-sm leading-4 text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+          data-umami-event="MYANIMELIST"
+          href={`https://myanimelist.net/anime/${data?.id}`}
+        >
+          Goto MyAnimeList
+        </CustomLink>
       </div>
     </div>
   );

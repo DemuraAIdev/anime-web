@@ -1,4 +1,4 @@
-import { getStudio } from "@/lib/myanimelist";
+import { searchAnimeByStudio } from "@/lib/myanimelist";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
@@ -7,9 +7,10 @@ export async function GET(
 ) {
   const url_param_status = params.id;
 
-  if (url_param_status) {
-    const response = await getStudio(url_param_status);
-    return NextResponse.json(response);
+  const data = await searchAnimeByStudio(url_param_status);
+
+  if (data) {
+    return NextResponse.json(data);
   }
 
   return NextResponse.json({}); // Fix: Replace resresponseponse with a valid response object

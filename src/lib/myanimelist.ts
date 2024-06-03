@@ -119,29 +119,27 @@ export const searchAnime = async (query: string) => {
 
   return data;
 };
-export const getStudio = async (id: string) => {
+
+export const getTop5Anime = async () => {
   const { access_token } = await getAccessToken();
 
-  const response = await fetch(
-    `https://api.myanimelist.net/v2/producer/${id}`,
-    {
-      headers: {
-        Authorization: `Bearer ${access_token}`,
-      },
-      cache: "force-cache",
-    }
-  );
-  console.log(response);
+  const response = await fetch("https://api.myanimelist.net/v2/anime/ranking", {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+    cache: "force-cache",
+  });
 
   const data = await response.json();
 
   return data;
 };
 
-export const getTop5Anime = async () => {
+// searchanime filter by studio
+export const searchAnimeByStudio = async (studioId: string) => {
   const { access_token } = await getAccessToken();
 
-  const response = await fetch("https://api.myanimelist.net/v2/anime/ranking", {
+  const response = await fetch(`https://api.myanimelist.net/v2/anime`, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
